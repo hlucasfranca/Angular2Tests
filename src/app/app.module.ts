@@ -5,6 +5,8 @@ import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+
 
 import 'hammerjs';
 
@@ -20,6 +22,7 @@ import { AppComponent } from './app.component';
     HttpModule,
     MaterialModule.forRoot(),
     FlexLayoutModule.forRoot(),
+    NgxDatatableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

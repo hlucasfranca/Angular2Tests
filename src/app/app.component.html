@@ -21,9 +21,7 @@
                 <input md-input placeholder="Dado 4" maxlength="100" value="">
             </md-input-container>
 
-
         </div>
-
 
         <div fxLayout="row" fxLayoutGap="10px" class="flex-container">
 
@@ -43,9 +41,7 @@
                 <input md-input placeholder="Dado 8" maxlength="100" value="">
             </md-input-container>
 
-
         </div>
-
 
         <div fxLayout="row" fxLayoutGap="10px" class="flex-container">
 
@@ -57,26 +53,28 @@
                 Flag 2
             </md-checkbox>
 
-            
-                <md-select placeholder="Selecione na Lista" fxFlex>
-                    <md-option *ngFor="let d of data" [value]="d.code">
-                        {{ d.name }}
-                    </md-option>
-                </md-select>
-            
-
-
-
+            <md-select placeholder="Selecione na Lista" fxFlex>
+                <md-option *ngFor="let dado of lista" [value]="dado.value">
+                    {{ dado.label }}
+                </md-option>
+            </md-select>
 
             <button md-raised-button color="primary">Buscar</button>
 
-
-
-
         </div>
-
-
     </md-card-content>
-
-
 </md-card>
+
+
+<div fxLayout="column" style="padding-top:10px">
+
+    <div fxFlex>
+        <ngx-datatable class="material fullscreen" 
+            [rows]="rows" 
+            [externalPaging]="true" 
+            [columns]="columns" 
+            (page)='onPage($event)'>
+        </ngx-datatable>
+    </div>
+
+</div>
